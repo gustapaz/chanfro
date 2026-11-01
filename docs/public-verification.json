@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-01",
+  "demo": "https://chanfro-gustapaz.starrylinen.chatgpt.site",
+  "application_commit": "c40dd40704135bfcda24eeb12879b9ba57039f29",
+  "automated_tests": 23,
+  "public_smoke": "passed",
+  "browser_flow": "passed",
+  "responsive_widths": [
+    390,
+    768
+  ],
+  "export": {
+    "filename": "chanfro.csv",
+    "bytes": 347,
+    "sha256": "5e6d67c0260e14a32e8954e787f3f5eb3fd5b1710fd941755573116445ac6bc8",
+    "structure": "passed"
+  }
+}
