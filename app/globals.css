@@ -1,0 +1,466 @@
+@import "./base.css";
+:root {
+  --focus: #c74c24;
+}
+body {
+  font:
+    12px/1.6 Mono,
+    monospace;
+  background: #e4e7dd;
+  color: #2b4033;
+}
+a {
+  text-decoration: none;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 3vw;
+  border-bottom: 1px solid #2b403355;
+}
+.brand {
+  font: 700 32px Manrope;
+  letter-spacing: -2px;
+}
+.brand span {
+  font: 8px Mono;
+  letter-spacing: 0.08em;
+  margin-left: 20px;
+}
+header > span,
+header > a:last-child {
+  font-size: 8px;
+}
+.workshop {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(320px, 1fr);
+}
+.board-area {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding: 32px 3vw 25px;
+  min-width: 0;
+}
+.board-heading {
+  display: grid;
+  grid-template-columns: 0.7fr 1.2fr 0.3fr;
+  align-items: start;
+  gap: 20px;
+}
+.board-heading > span {
+  font-size: 8px;
+}
+.board-heading > span:last-child {
+  text-align: right;
+}
+.board-heading h1 {
+  font: 38px/1 Georgia;
+  letter-spacing: -2px;
+  font-weight: 400;
+  margin: 0;
+}
+.board-heading h1 em {
+  color: #a44a2a;
+}
+.board-frame {
+  height: 570px;
+  position: relative;
+  margin-top: 25px;
+}
+.board-frame canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.axis {
+  position: absolute;
+  font-size: 7px;
+  letter-spacing: 0.2em;
+}
+.axis.horizontal {
+  bottom: 0;
+  left: 40%;
+}
+.axis.vertical {
+  left: 0;
+  top: 50%;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+}
+.board-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 7px;
+  margin-top: 20px;
+  border-top: 1px solid #2b403355;
+  padding-top: 15px;
+}
+.material {
+  border-top: 1px solid #2b403355;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 9px;
+}
+.material summary {
+  cursor: pointer;
+}
+.material figure {
+  margin: 20px 0 0;
+}
+.material img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.material figcaption {
+  font-size: 8px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+#parameters {
+  background: #f0efe5;
+  border-left: 1px solid #2b403355;
+  padding: 30px 28px;
+}
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  gap: 20px;
+  border-bottom: 1px solid #2b403355;
+  padding-bottom: 23px;
+}
+.title-row > span:last-child {
+  font-size: 7px;
+}
+.controls {
+  margin-top: 25px;
+}
+.controls > label {
+  display: block;
+  font-size: 10px;
+  margin: 25px 0;
+}
+.controls label > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.controls output {
+  font-size: 11px;
+}
+.controls select {
+  display: block;
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #2b403377;
+  color: inherit;
+  padding: 10px 0;
+  border-radius: 0;
+  font-size: 15px;
+}
+.controls input[type="range"] {
+  display: block;
+  width: 100%;
+  height: 30px;
+  accent-color: #42664d;
+  margin-top: 8px;
+}
+.controls .rotation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rotation input {
+  width: 20px;
+  height: 20px;
+  accent-color: #42664d;
+}
+.compose {
+  width: 100%;
+  background: #2b4033;
+  color: #f2efdd;
+  border: 0;
+  padding: 16px 20px;
+  font-size: 12px;
+}
+.status {
+  font-size: 10px;
+  line-height: 1.7;
+  min-height: 30px;
+  color: #995035;
+}
+.presets {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.presets button {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #2b403355;
+  color: inherit;
+  font-size: 9px;
+  padding: 7px 0;
+}
+.yield {
+  border-block: 1px solid #2b403355;
+  margin-top: 30px;
+  padding: 22px 0;
+}
+.yield > span {
+  font-size: 8px;
+}
+.yield strong {
+  display: block;
+  font: 65px/1.2 Manrope;
+  letter-spacing: -5px;
+  font-weight: 400;
+}
+.yield strong small {
+  font: 16px Mono;
+  letter-spacing: 0;
+}
+.yield p {
+  font-size: 9px;
+  margin-bottom: 0;
+}
+.cutting-list,
+.archive {
+  border-bottom: 1px solid #2b403355;
+  padding: 20px 0;
+  font-size: 10px;
+}
+.cutting-list summary,
+.archive summary {
+  cursor: pointer;
+  font-size: 9px;
+}
+.cutting-list > p {
+  font-size: 9px;
+}
+.piece-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1.4fr;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #2b403322;
+  padding: 12px 0;
+  color: inherit;
+  font-size: 9px;
+}
+.piece-row b {
+  font-weight: 400;
+}
+.piece-row small {
+  text-align: right;
+  font-size: 8px;
+}
+.piece-row[aria-pressed="true"] {
+  color: #b54a26;
+}
+.unplaced {
+  color: #a53c24;
+}
+.archive label {
+  display: block;
+  font-size: 9px;
+  margin-top: 22px;
+}
+.archive input {
+  display: block;
+  width: 100%;
+  background: none;
+  color: inherit;
+  border: 0;
+  border-bottom: 1px solid #2b403377;
+  padding: 12px 0;
+  font: 18px Manrope;
+}
+.archive button {
+  background: none;
+  color: inherit;
+  border: 1px solid #2b403366;
+  padding: 10px 13px;
+  font-size: 9px;
+  margin: 13px 8px 7px 0;
+}
+.archive a {
+  display: block;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  font-size: 10px;
+  margin-top: 12px;
+}
+.archive > small {
+  display: block;
+  font-size: 8px;
+  line-height: 1.7;
+}
+.saved {
+  border-top: 1px dashed #2b403344;
+  padding-top: 15px;
+  margin-top: 20px;
+}
+.saved > span {
+  font-size: 8px;
+}
+.saved button {
+  display: block;
+  border: 0;
+  padding: 5px 0;
+}
+.model-note {
+  font-size: 8px;
+  line-height: 1.8;
+  color: #62705f;
+  margin: 20px 0 0;
+}
+footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 25px 3vw;
+  border-top: 1px solid #2b403355;
+  font-size: 9px;
+}
+footer strong {
+  font: 700 25px Manrope;
+  letter-spacing: -1.5px;
+}
+footer button {
+  margin-left: auto;
+  background: none;
+  color: inherit;
+  border: 1px solid #2b403366;
+  padding: 10px;
+  font-size: 9px;
+}
+@media (max-width: 950px) {
+  .brand span {
+    display: none;
+  }
+  .workshop {
+    grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr);
+  }
+  .board-heading {
+    display: block;
+  }
+  .board-heading > span:last-child {
+    display: none;
+  }
+  .board-heading h1 {
+    font-size: 37px;
+    margin-top: 20px;
+  }
+  .board-frame {
+    height: 450px;
+  }
+  .board-foot {
+    font-size: 6px;
+  }
+}
+@media (max-width: 680px) {
+  header {
+    padding: 20px;
+  }
+  .brand {
+    font-size: 27px;
+  }
+  header > span {
+    display: none;
+  }
+  header > a:last-child {
+    font-size: 7px;
+  }
+  .workshop {
+    display: flex;
+    flex-direction: column;
+  }
+  .board-area {
+    position: relative;
+    padding: 25px 22px;
+    order: 1;
+  }
+  .board-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .board-heading h1 {
+    font-size: 33px;
+    margin: 0;
+  }
+  .board-heading > span {
+    font-size: 7px;
+  }
+  .board-frame {
+    height: 370px;
+    margin-top: 15px;
+  }
+  .board-foot {
+    gap: 15px;
+    font-size: 6px;
+  }
+  #parameters {
+    order: 2;
+    border-left: 0;
+    border-top: 1px solid #2b403355;
+    padding: 25px 22px;
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 25px;
+  }
+  .controls > label:first-child {
+    grid-column: 1/-1;
+  }
+  .controls > label {
+    margin: 12px 0 20px;
+  }
+  .controls output {
+    font-size: 10px;
+  }
+  .controls .rotation {
+    grid-column: 1/-1;
+    margin: 0 0 20px;
+  }
+  .compose {
+    grid-column: 1/-1;
+  }
+  .yield {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5px;
+  }
+  .yield strong {
+    font-size: 58px;
+    grid-column: 2;
+    grid-row: 1/3;
+    text-align: right;
+  }
+  .yield p {
+    max-width: 160px;
+  }
+  .material img {
+    height: 250px;
+  }
+  footer {
+    padding: 22px;
+    gap: 18px;
+  }
+  footer button {
+    margin: 0;
+  }
+}

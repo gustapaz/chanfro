@@ -1,0 +1,31 @@
+{
+  "assets": [
+    {
+      "file": "public/media/subject.webp",
+      "author": "Natalia Sevruk",
+      "source_url": "https://www.pexels.com/photo/close-up-of-wooden-texture-with-detailed-grain-patterns-36081877/",
+      "download_url": "https://images.pexels.com/photos/36081877/pexels-photo-36081877.jpeg",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "verified_at": "2026-11-01T12:36:12.205072+00:00",
+      "source_sha256": "b539ea3719b8cab6deaf14c8726252b6912b0ae255ef38fe5b63ed156d8a5310",
+      "output_sha256": "b4430e94e8bc5de28dd47c258727edb4b4c8454a6823c1ace06cc34676bac430",
+      "source_dimensions": [
+        5184,
+        3456
+      ],
+      "width": 1200,
+      "height": 800,
+      "bytes": 193550,
+      "transformations": [
+        "EXIF orientation applied",
+        "RGB conversion",
+        "long edge resized to maximum 1200px",
+        "EXIF removed",
+        "WebP quality 70, method 6"
+      ],
+      "visual_review": "Inspeção visual da versão final: sem faces identificáveis, marcas visíveis ou dados pessoais legíveis. Recortes usados em Doca, Rubato e Fagulha para excluir marcas de equipamentos.",
+      "usage": "Imagem de ambientação em demonstração de portfólio; não é produto para revenda e não implica endosso."
+    }
+  ]
+}
